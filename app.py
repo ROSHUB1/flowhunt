@@ -42,7 +42,7 @@ def make_session() -> requests.Session:
     })
     return s
 
-def fetch(url: str, *, retries: int = 2, timeout: int = 15, **kwargs) -> requests.Response | None:
+def fetch(url: str, *, retries: int = 2, timeout: int = 15, **kwargs):
     for attempt in range(retries):
         try:
             s = make_session()
